@@ -8,15 +8,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashLoginPasscode.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen" />
-        <activity android:name=".PassCodeScreen" />
+        <activity android:name=".SplashLoginPasscode.LoginScreen"
+            android:label="@string/title_activity_login"/>
+        <activity android:name=".SplashLoginPasscode.PassCodeScreen"
+            android:label="@string/title_passcodescreen"/>
         <activity android:name=".DashBoardActivity"></activity>
     </application>
 

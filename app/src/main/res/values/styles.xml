@@ -21,5 +21,8 @@
         <item name="android:textColorHint">@color/colorPrimary</item>
     </style>
 
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar"> 
+        <item name="android:windowBackground">@android:color/black</item> 
+    </style>
 
 </resources>

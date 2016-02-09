@@ -3,4 +3,13 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
 
+
+    <string name="login">LOGIN</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="go">GO</string>
+
+    <string name="passcode_content">*Please enter the passcode that was set at the time of User-Registration to unlock the application.</string>
+    <string name="Passcode">passcode</string>
+    <string name="passcode">Passcode</string>
+    <string name="title_passcodescreen">Passcode</string>
 </resources>
