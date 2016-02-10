@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="16dp">
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="6dp">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         app:cardBackgroundColor="@color/colorPrimary">
 
         <RelativeLayout
@@ -27,10 +28,11 @@
                 android:layout_marginRight="16dp"
                 android:text="Village - Mahar Kala"
                 android:textColor="#000000"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/person_name"
+                android:id="@+id/taluka"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/village"
@@ -42,7 +44,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/person_age"
+                android:id="@+id/leads_cattles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -55,12 +57,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="25dp"
-                android:layout_below="@+id/person_age"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/leads_cattles"
                 android:layout_alignParentRight="true">
 
                 <Button
-                    android:id="@+id/left"
+                    android:id="@+id/assigned"
                     android:layout_width="35dp"
                     android:layout_height="28dp"
                     android:textColor="#ffffff"
@@ -71,10 +73,11 @@
                     />
 
                 <Button
+                    android:id="@+id/unassigned"
                     android:layout_width="35dp"
                     android:layout_height="28dp"
                     android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@+id/left"
+                    android:layout_toRightOf="@+id/btn_left"
                     android:background="@drawable/border_blue"
                     android:layout_marginLeft="5dp"
                     android:text="22"
@@ -89,5 +92,6 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
 
 </LinearLayout>

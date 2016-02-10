@@ -10,26 +10,28 @@ import java.util.List;
  */
 public class DummyDataDashboard {
 
-    String name;
-    String age;
-    int photoId;
+    String village,taluka,leadCattles,assigned,notAssigned;
 
 
-    DummyDataDashboard(String name, String age, int photoId) {
-        this.name = name;
-        this.age = age;
-        this.photoId = photoId;
+
+
+    DummyDataDashboard(String village, String taluka, String leadCattles,String assigned,String notAssigned) {
+        this.village = village;
+        this.taluka = taluka;
+        this.leadCattles = leadCattles;
+        this.assigned = assigned;
+        this.notAssigned = notAssigned;
     }
 
     private List<DummyDataDashboard> dummyDataDashboards;
 
 
     private void initializeData()
-    {
+    {/*
         dummyDataDashboards =  new ArrayList<>();
         dummyDataDashboards.add(new DummyDataDashboard("Sudatt Dave","28 years old", R.drawable.logo));
         dummyDataDashboards.add(new DummyDataDashboard("Shraddha Dave","28 years old", R.drawable.logo));
-        dummyDataDashboards.add(new DummyDataDashboard("Samaya Dave","28 years old", R.drawable.logo));
+        dummyDataDashboards.add(new DummyDataDashboard("Samaya Dave","28 years old", R.drawable.logo));*/
     }
 
 }

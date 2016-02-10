@@ -12,4 +12,5 @@
     <string name="Passcode">passcode</string>
     <string name="passcode">Passcode</string>
     <string name="title_passcodescreen">Passcode</string>
+    <string name="title_activity_lead_detail_screen">LeadDetailScreen</string>
 </resources>
