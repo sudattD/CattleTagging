@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.hdfcergo.cattletagging.DashBoardActivity"
+    android:background="@android:color/white">
+
+    <!--For main content with recyclerview [start]-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+
+        <!--For three count horizontal [start]-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:gravity="center">
+
+            <!--For village-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="4"
+                    android:id="@+id/textView01"
+                    android:textColor="#000000"
+                    android:background="@drawable/circleoutline"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Village"
+                    android:id="@+id/textView1"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+            <!--For leads-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="11"
+                    android:id="@+id/textView02"
+                    android:textColor="#000000"
+                    android:background="@drawable/circleoutline"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Leads"
+                    android:id="@+id/textView2"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+            <!--For cattles-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="81"
+                    android:id="@+id/textView03"
+                    android:textColor="#000000"
+                    android:background="@drawable/circleoutline"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Cattles"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--For three count horizontal [End]-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:clickable="true"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+    <!--For bottom horizontal bar[start]-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:weightSum="1"
+        android:paddingBottom="5dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="28dp"
+                android:background="@drawable/roundedrectgreen"
+                android:layout_marginLeft="10dp"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Assigned"
+                android:id="@+id/textViewR"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="0.5">
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="28dp"
+                android:background="@drawable/roundedrectblue"
+                android:layout_marginLeft="50dp"
+                ></View>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Unassigned"
+                android:id="@+id/textViewB"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--For bottom horizontal bar[start]-->
+</RelativeLayout>

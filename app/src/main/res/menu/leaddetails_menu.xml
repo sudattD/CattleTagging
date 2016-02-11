@@ -11,16 +11,14 @@
         android:orderInCategory="100"
         android:title="Search"
         android:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="ifRoom">
-
-    </item>
-
-    <item
-        android:id="@+id/action_filter"
-        android:icon="@drawable/filter"
-        android:orderInCategory="200"
-        android:title="filter"
-
         app:showAsAction="ifRoom"></item>
+
+<item
+    android:id="@+id/action_notification"
+    android:icon="@android:drawable/sym_action_chat"
+    android:orderInCategory="200"
+    android:title="noti"
+    app:showAsAction="ifRoom"
+    />
 
 </menu>

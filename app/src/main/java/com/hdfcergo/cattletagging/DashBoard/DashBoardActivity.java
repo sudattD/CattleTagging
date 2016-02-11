@@ -21,7 +21,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private Context mContext;
     private Toolbar toolbar;
 
-    ArrayList<DummyDataDashboard> recyclerViewData;
+    ArrayList<DashboardDataDummy> recyclerViewData;
 
 
     @Override
@@ -37,18 +37,18 @@ public class DashBoardActivity extends AppCompatActivity {
 
 
         mContext = this;
-        recyclerViewData = new ArrayList<DummyDataDashboard>();
-        recyclerViewData.add(new DummyDataDashboard("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
+        recyclerViewData = new ArrayList<DashboardDataDummy>();
+        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
 
-        recyclerViewData.add(new DummyDataDashboard("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
-        recyclerViewData.add(new DummyDataDashboard("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
 
 
         rv = (RecyclerView)findViewById(R.id.rv);

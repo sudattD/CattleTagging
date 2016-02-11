@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.hdfcergo.cattletagging.CattleTaggingFragments.CattleFragmentsContainerActivity">
+
+
+    <LinearLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="1"
+        android:background="#cfcfcf"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Status"
+            android:gravity="center"
+            android:onClick="onStatusFrag"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="#000000"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:text="Details"
+            android:onClick="detailsFrag"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:text="ImageUpload"
+            android:onClick="imageUploadFrag"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="35dp"
+            android:background="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:text="Signature"
+            android:onClick="signatureFrag"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_below="@+id/tabs"
+        android:id="@+id/frameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    </FrameLayout>
+
+</RelativeLayout>

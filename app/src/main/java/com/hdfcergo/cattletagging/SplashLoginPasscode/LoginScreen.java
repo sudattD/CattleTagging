@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.hdfcergo.cattletagging.CattleTaggingFragments.CattleFragmentsContainerActivity;
 import com.hdfcergo.cattletagging.DashBoard.DashBoardActivity;
 import com.hdfcergo.cattletagging.R;
 
@@ -31,7 +32,8 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(LoginScreen.this, DashBoardActivity.class));
+               // startActivity(new Intent(LoginScreen.this, DashBoardActivity.class));
+                startActivity(new Intent(LoginScreen.this, CattleFragmentsContainerActivity.class));
 
             }
         });

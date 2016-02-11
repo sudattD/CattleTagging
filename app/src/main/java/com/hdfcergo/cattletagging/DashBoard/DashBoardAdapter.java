@@ -1,17 +1,17 @@
 package com.hdfcergo.cattletagging.DashBoard;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hdfcergo.cattletagging.LeadDetails.LeadDetailActivity;
 import com.hdfcergo.cattletagging.R;
 
 import java.util.List;
@@ -20,16 +20,18 @@ import java.util.List;
 /**
  * Created by davesuda on 2/9/2016.
  */
+
+//search bar -http://javapapers.com/android/android-searchview-action-bar-tutorial/
 public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.PersonViewHolder> {
 
-    List<DummyDataDashboard> dummyDataDashboards;
+    List<DashboardDataDummy> dashboardDataDummies;
     private Context context;
 
 
 
-     DashBoardAdapter(List<DummyDataDashboard> dummyDataDashboards,Context mcont)
+     DashBoardAdapter(List<DashboardDataDummy> dashboardDataDummies,Context mcont)
     {
-        this.dummyDataDashboards = dummyDataDashboards;
+        this.dashboardDataDummies = dashboardDataDummies;
         context = mcont;
     }
 
@@ -47,11 +49,11 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
     @Override
     public void onBindViewHolder(PersonViewHolder holder, int position) {
 
-        PersonViewHolder.villageName.setText(dummyDataDashboards.get(position).village);
-        PersonViewHolder.talukaName.setText(dummyDataDashboards.get(position).taluka);
-        PersonViewHolder.leadCattles.setText(dummyDataDashboards.get(position).leadCattles);
-        PersonViewHolder.assigned.setText(dummyDataDashboards.get(position).assigned);
-        PersonViewHolder.unAssigned.setText(dummyDataDashboards.get(position).notAssigned);
+        PersonViewHolder.villageName.setText(dashboardDataDummies.get(position).village);
+        PersonViewHolder.talukaName.setText(dashboardDataDummies.get(position).taluka);
+        PersonViewHolder.leadCattles.setText(dashboardDataDummies.get(position).leadCattles);
+        PersonViewHolder.assigned.setText(dashboardDataDummies.get(position).assigned);
+        PersonViewHolder.unAssigned.setText(dashboardDataDummies.get(position).notAssigned);
 
 
 
@@ -60,6 +62,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
             public void onClick(View view) {
 
                 Toast.makeText(context, "Card view", Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context,LeadDetailActivity.class));
 
 
             }
@@ -76,7 +79,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
 
     @Override
     public int getItemCount() {
-        return dummyDataDashboards.size();
+        return dashboardDataDummies.size();
     }
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
