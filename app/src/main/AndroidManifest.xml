@@ -28,7 +28,9 @@
             android:name=".DashBoard.DashBoardActivity"
             android:label="Dashboard" />
         <activity android:name=".LeadDetails.LeadDetailActivity" />
-        <activity android:name=".CattleTaggingFragments.CattleFragmentsContainerActivity"></activity>
+        <activity android:name=".CattleTaggingFragments.CattleFragmentsContainerActivity" />
+        <activity android:name=".LeadSummaryActivity.CattleLeadSummaryActivity" />
+        <activity android:name=".CattleFormFilling.CattleFormFilling"></activity>
     </application>
 
 </manifest>

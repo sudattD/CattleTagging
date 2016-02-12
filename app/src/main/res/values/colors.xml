@@ -3,6 +3,7 @@
     <color name="colorPrimary">#C43635</color>
     <color name="colorPrimaryDark">#800000</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="caldroid_white">#FFFFFF</color>
 
     <item name="hdfc_red" type="color">#C43635</item>
     <item name="hdfc_blue" type="color">#2673FF</item>

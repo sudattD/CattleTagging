@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.hdfcergo.cattletagging.CattleFormFilling.CattleFormFilling;
 import com.hdfcergo.cattletagging.CattleTaggingFragments.CattleFragmentsContainerActivity;
 import com.hdfcergo.cattletagging.DashBoard.DashBoardActivity;
+import com.hdfcergo.cattletagging.LeadSummaryActivity.CattleLeadSummaryActivity;
 import com.hdfcergo.cattletagging.R;
 
 public class LoginScreen extends AppCompatActivity {
@@ -33,7 +35,7 @@ public class LoginScreen extends AppCompatActivity {
             public void onClick(View view) {
 
                // startActivity(new Intent(LoginScreen.this, DashBoardActivity.class));
-                startActivity(new Intent(LoginScreen.this, CattleFragmentsContainerActivity.class));
+                startActivity(new Intent(LoginScreen.this, CattleLeadSummaryActivity.class));
 
             }
         });
