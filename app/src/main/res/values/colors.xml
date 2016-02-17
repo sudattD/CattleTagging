@@ -14,4 +14,10 @@
 
     <item name="green_button" type="color">#28a428</item>
     <item name="blue_button" type="color">#1e90ff</item>
+    
+    
+    
+    <item name="color_palletebg" type="color">#f8f8f8</item>
+    <item name="green_hdfc" type="color">#1f7915</item>
+    <item name="orange_hdfc" type="color">#e28705</item>
 </resources>

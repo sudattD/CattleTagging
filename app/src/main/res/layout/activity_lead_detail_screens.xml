@@ -80,7 +80,7 @@
                     android:layout_toRightOf="@+id/btn_left"
                     android:background="@drawable/border_blue"
                     android:layout_marginLeft="5dp"
-                    android:text="22"
+                    android:text="12"
                     android:textColor="#ffffff"
                     android:textStyle="bold"
 

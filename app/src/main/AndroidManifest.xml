@@ -20,17 +20,43 @@
         </activity>
         <activity
             android:name=".SplashLoginPasscode.LoginScreen"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashLoginPasscode.PassCodeScreen"
-            android:label="@string/title_passcodescreen" />
+            android:label="@string/title_passcodescreen"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DashBoard.DashBoardActivity"
-            android:label="Dashboard" />
-        <activity android:name=".LeadDetails.LeadDetailActivity" />
-        <activity android:name=".CattleTaggingFragments.CattleFragmentsContainerActivity" />
-        <activity android:name=".LeadSummaryActivity.CattleLeadSummaryActivity" />
-        <activity android:name=".CattleFormFilling.CattleFormFilling"></activity>
+            android:label="Dashboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LeadDetails.LeadDetailActivity"
+            android:label="Leads"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CattleTaggingFragments.CattleFragmentsContainerActivity"
+            android:label="Cattle Tagging"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LeadSummaryActivity.CattleLeadSummaryActivity"
+            android:label="Lead Summary"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CattleFormFilling.CattleFormFilling"
+            android:label="Lead Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashLoginPasscode.ForgotPasswordActivity"
+            android:label="Forgot Password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CattleTaggingFragments.SignatureViewActivity"
+            android:label="Signature"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LeadSummarySwipable.LeadSummarySwipable"></activity>
     </application>
 
 </manifest>

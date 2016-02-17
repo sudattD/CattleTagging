@@ -39,7 +39,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dashboard_item_re,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.dashboard_item_newdesign,parent,false);
         PersonViewHolder pvh  = new PersonViewHolder(v);
 
 
@@ -48,6 +48,9 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
 
     @Override
     public void onBindViewHolder(PersonViewHolder holder, int position) {
+
+
+       final DashboardDataDummy data_on_position = dashboardDataDummies.get(position);
 
         PersonViewHolder.villageName.setText(dashboardDataDummies.get(position).village);
         PersonViewHolder.talukaName.setText(dashboardDataDummies.get(position).taluka);
@@ -61,12 +64,19 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(context, "Card view", Toast.LENGTH_SHORT).show();
-                context.startActivity(new Intent(context,LeadDetailActivity.class));
+                //Toast.makeText(context, "Card view"+data_on_position.village.split("-")[1].trim(), Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(context, "Card view"+data_on_position.taluka.split("-")[1].trim(), Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context, LeadDetailActivity.class)
+                        .putExtra("village",data_on_position.village.split("-")[1].trim())
+                        .putExtra("taluka",data_on_position.taluka.split("-")[1].trim()));
+
 
 
             }
         });
+
+
 
 
 

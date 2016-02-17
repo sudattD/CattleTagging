@@ -11,12 +11,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hdfcergo.cattletagging.CattleFormFilling.CattleFormFilling;
 import com.hdfcergo.cattletagging.DashBoard.DashBoardAdapter;
 import com.hdfcergo.cattletagging.DashBoard.DashboardDataDummy;
 import com.hdfcergo.cattletagging.LeadDetails.LeadDetailActivity;
 import com.hdfcergo.cattletagging.LeadDetails.LeadDetailsAdapter;
 import com.hdfcergo.cattletagging.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,7 +41,7 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.lead_cattle_item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cattle_item_redesign,parent,false);
         PersonViewHolder pvh  = new PersonViewHolder(v);
 
 
@@ -49,17 +51,20 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
     @Override
     public void onBindViewHolder(PersonViewHolder holder, int position) {
 
+
+        final LeadCattleData leadCattleData = dashboardDataDummies.get(position);
         PersonViewHolder.cattleName.setText(dashboardDataDummies.get(position).cattle);
         PersonViewHolder.statusImage.setImageResource(dashboardDataDummies.get(position).imageIcon);
 
+        List<String> cattleInfo = new ArrayList<>();
 
 
         PersonViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(context, "Card view", Toast.LENGTH_SHORT).show();
-                context.startActivity(new Intent(context,LeadDetailActivity.class));
+               // Toast.makeText(context, "Card view"+dashboardDataDummies.get(position).cattle, Toast.LENGTH_SHORT).show();
+                context.startActivity(new Intent(context,CattleFormFilling.class).putExtra("cattle", leadCattleData.cattle));
 
 
             }
@@ -79,7 +84,7 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
         return dashboardDataDummies.size();
     }
 
-    public static class PersonViewHolder extends RecyclerView.ViewHolder {
+    public static class PersonViewHolder extends RecyclerView.ViewHolder  {
         static CardView cv;
         static TextView cattleName;
         static ImageView statusImage;

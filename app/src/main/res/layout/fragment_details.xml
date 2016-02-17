@@ -1,9 +1,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+
     >
 
     <ScrollView
@@ -20,82 +22,48 @@
             android:paddingTop="@dimen/activity_vertical_margin">
 
 
-            <FrameLayout
-                android:id="@+id/layout_password"
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/spinner_species"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/usernameTxt"
-                android:orientation="horizontal"
-                android:weightSum="1">
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/usernameTxt"
-                android:layout_width="fill_parent"
+
+                android:layout_marginLeft="4dp"
+
+                android:gravity="left|center_vertical"
+                android:hint="Species"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/edittext_size"
+                app:met_floatingLabel="normal" />
+
+
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/spinner_animalbreeed"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                >
 
-                <EditText
-                    android:id="@+id/usernameEdt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Species*"
-                    android:inputType="textEmailAddress"
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                android:layout_marginLeft="4dp"
 
-            </android.support.design.widget.TextInputLayout>
-                <ImageView
-                    android:id="@+id/arrowdown"
-                    android:layout_width="30dp"
-                    android:layout_height="60dp"
-                   android:src="@drawable/ic_action_arrowdown"
-                    android:layout_gravity="end|center_vertical"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight=".20" />
-
-                </FrameLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/passwordTxt"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edt_animalbreed"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Animal Breed"
-
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                android:gravity="left|center_vertical"
+                android:hint="Animal Breed"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/edittext_size"
+                app:met_floatingLabel="normal" />
 
 
-            </android.support.design.widget.TextInputLayout>
 
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/spinner_breedtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/taggingdate"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginLeft="4dp"
 
-                <EditText
-                    android:id="@+id/edt_breedtype"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Breed Type"
-
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
-
-
-            </android.support.design.widget.TextInputLayout>
+                android:gravity="left|center_vertical"
+                android:hint="Breed Type"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/edittext_size"
+                app:met_floatingLabel="normal" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/marketval"
@@ -112,31 +80,58 @@
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                    android:textSize="@dimen/edittext_size" />
 
 
             </android.support.design.widget.TextInputLayout>
 
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/lefthorn"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/lefthorn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/edt_lefthorn"
-                    android:layout_width="100dp"
+                    <EditText
+                        android:id="@+id/edt_lefthorn"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:hint="Left Horn"
+
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/edittext_size" />
+
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/rightthorn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Left Horn"
+                    android:layout_alignParentRight="true">
 
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                    <EditText
+                        android:id="@+id/edt_righthorn"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:hint="Right Horn"
+
+                        android:paddingLeft="7dp"
+                        android:paddingRight="7dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/edittext_size" />
 
 
-            </android.support.design.widget.TextInputLayout>
+                </android.support.design.widget.TextInputLayout>
+            </RelativeLayout>
+
 
 
             <android.support.design.widget.TextInputLayout
@@ -154,52 +149,57 @@
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                    android:textSize="@dimen/edittext_size"/>
 
 
             </android.support.design.widget.TextInputLayout>
 
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/approAge"
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/spinner_age"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
 
-                <EditText
-                    android:id="@+id/edt_approxage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Approximte Age"
+                android:layout_marginLeft="4dp"
 
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
-                    android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                android:gravity="left|center_vertical"
+                android:hint="Approximate Age"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/edittext_size"
+                app:met_floatingLabel="normal" />
 
 
-            </android.support.design.widget.TextInputLayout>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/millkyoield"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/edt_milkyield"
-                    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/spinner_milk"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:hint="Milk Yield/day"
 
-                    android:paddingLeft="7dp"
-                    android:paddingRight="7dp"
+                    android:layout_marginLeft="4dp"
+
+                    android:gravity="left|center_vertical"
+                    android:hint="Milk yield/day"
                     android:textColor="@android:color/black"
-                    android:textSize="19sp" />
+                    android:textSize="@dimen/edittext_size"
+                    app:met_floatingLabel="normal" />
+                <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                    android:id="@+id/spinner_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                    android:layout_marginLeft="4dp"
 
-
-            </android.support.design.widget.TextInputLayout>
+                    android:gravity="left|center_vertical"
+                    android:hint="No. of location"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/edittext_size"
+                    app:met_floatingLabel="normal" />
+            </RelativeLayout>
 
 
 

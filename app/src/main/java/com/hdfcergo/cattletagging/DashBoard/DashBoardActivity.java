@@ -7,8 +7,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.hdfcergo.cattletagging.R;
+import com.hdfcergo.cattletagging.Utility.FontChangeCrawler;
 
 import java.util.ArrayList;
 
@@ -20,6 +24,7 @@ public class DashBoardActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager llm;
     private Context mContext;
     private Toolbar toolbar;
+
 
     ArrayList<DashboardDataDummy> recyclerViewData;
 
@@ -37,18 +42,19 @@ public class DashBoardActivity extends AppCompatActivity {
 
 
         mContext = this;
-        recyclerViewData = new ArrayList<DashboardDataDummy>();
-        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
 
-        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","10","22"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","10"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","6","12"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","5","15"));
-        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","11","16"));
+        recyclerViewData = new ArrayList<DashboardDataDummy>();
+        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","2","20"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","8"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","10","5"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","6","3"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","10","10"));
+
+        recyclerViewData.add(new DashboardDataDummy("Village - Mahar Kala","Taluka - Chomu","4 leads/ 22 cattles","2","20"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Manda Bhinda","Taluka - Chomu","3 leads/ 12 cattles","4","8"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Deesa","Taluka - Chomu","2 leads/ 15 cattles","10","5"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Jasara","Taluka - Deesa","1 leads/ 9 cattles","6","3"));
+        recyclerViewData.add(new DashboardDataDummy("Village - Kasauli","Taluka - Deesa","1 leads/ 20 cattles","10","10"));
 
 
         rv = (RecyclerView)findViewById(R.id.rv);
@@ -64,8 +70,21 @@ public class DashBoardActivity extends AppCompatActivity {
         DashBoardAdapter adapter = new DashBoardAdapter(recyclerViewData,mContext);
         rv.setAdapter(adapter);
 
+
+        //Setting up texts
+        getSupportActionBar().setTitle("Dashboard " + "(4)" + "(11)" + "(81)");
+
+
         //mAdapter = new DashBoardAdapter(myDataset);
 
+    }
+
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+
+        FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "HelveticaNeueLTStd-Roman.otf");
+        fontChanger.replaceFonts((ViewGroup) this.findViewById(android.R.id.content));
     }
 
 

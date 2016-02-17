@@ -10,14 +10,14 @@
         android:icon="@drawable/ico_search_white"
         android:orderInCategory="100"
         android:title="Search"
-        android:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="ifRoom"></item>
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always"></item>
 
 <item
-    android:id="@+id/action_notification"
-    android:icon="@android:drawable/sym_action_chat"
+    android:id="@+id/action_filter"
+    android:icon="@drawable/filter"
     android:orderInCategory="200"
-    android:title="noti"
+    android:title="filter"
     app:showAsAction="ifRoom"
     />
 
