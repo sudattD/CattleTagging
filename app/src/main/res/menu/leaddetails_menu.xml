@@ -21,4 +21,15 @@
     app:showAsAction="ifRoom"
     />
 
+    <item
+        android:id="@+id/action_gone"
+    android:icon="@drawable/more"
+        android:orderInCategory="300"
+        android:title="filter"
+        app:showAsAction="ifRoom"
+        />
+
+
+
+
 </menu>

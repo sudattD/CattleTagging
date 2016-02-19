@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 
 import com.hdfcergo.cattletagging.R;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
@@ -22,7 +23,7 @@ public class DetailViewFragment extends Fragment{
     private View rootView;
     private Context mContext;
     ArrayAdapter<String> adapter;
-    private String[] species = {"Status 1","Status 2"};
+    private String[] species = {"Species 1","Species 2"};
     private String[] animalBreed = {"breed 1","breed 2"};
     private String[] breedType = {"breed type 1","breeed type 2","breed type 3"};
     private String[] approAge = {"20","30","40"};
@@ -30,6 +31,8 @@ public class DetailViewFragment extends Fragment{
     private String[] milk= {"1 lt"," 5 lt"," 7 lt "};
 
     private String[] location= {"1","5","7"};
+
+    ImageView back,forward;
 
 
 
@@ -50,6 +53,8 @@ public class DetailViewFragment extends Fragment{
     private void initializeViews() {
 
         mContext = rootView.getContext();
+        back =(ImageView) rootView.findViewById(R.id.backward);
+        forward = (ImageView) rootView.findViewById(R.id.forward);
         MaterialBetterSpinner spinner = (MaterialBetterSpinner)rootView.findViewById(R.id.spinner_species);
         MaterialBetterSpinner spinner_animalbreed = (MaterialBetterSpinner)rootView.findViewById(R.id.spinner_animalbreeed);
         MaterialBetterSpinner spinner_breedtype = (MaterialBetterSpinner)rootView.findViewById(R.id.spinner_breedtype);
@@ -79,7 +84,8 @@ public class DetailViewFragment extends Fragment{
         spinner_location.setAdapter(adapter);
 
 
-
+        back.setVisibility(View.VISIBLE);
+        forward.setVisibility(View.VISIBLE);
 
     }
 }

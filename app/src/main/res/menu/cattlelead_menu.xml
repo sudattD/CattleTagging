@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/action_save"
-        android:icon="@drawable/save"
+        android:icon="@drawable/savenewn"
         android:orderInCategory="200"
         android:title="Save"
 
@@ -15,9 +15,17 @@
 
     <item
         android:id="@+id/action_signature"
-        android:icon="@drawable/sign"
+        android:icon="@drawable/signnew"
         android:orderInCategory="100"
         android:title="filter"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/action_gotoform"
+        android:icon="@drawable/diarynew"
+        android:orderInCategory="100"
+        android:title="FORM"
         app:showAsAction="ifRoom"
         />
 

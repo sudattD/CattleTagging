@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,10 +29,10 @@ public class LeadDetailActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager llm;
     private Context mContext;
     TextView tv_village,tv_taluka;
-
+    RelativeLayout rl_villageview;
     ArrayList<LeadDataDummy> recyclerViewData;
     Bundle bundle;
-
+    public static boolean villageview = false;
     public static final int IDM_ONE = 101;
     public static final int IDM_TWO = 102;
     public static final int IDM_THREE = 103;
@@ -52,6 +54,7 @@ public class LeadDetailActivity extends AppCompatActivity {
         mContext = this;
         tv_village = (TextView) findViewById(R.id.village);
         tv_taluka =(TextView)findViewById(R.id.taluka);
+        rl_villageview = (RelativeLayout) findViewById(R.id.villageView);
         bundle = getIntent().getExtras();
         recyclerViewData = new ArrayList<LeadDataDummy>();
         recyclerViewData.add(new LeadDataDummy("Beneficiery - Dada Bhai Pathan","Loan Account number - 00xx5674532","Lead number - CT88765432","Lead Generated Date - 09/07/2015","No. of cattles - 2 Tat : 24 hrs"));
@@ -137,6 +140,21 @@ public class LeadDetailActivity extends AppCompatActivity {
 
             case R.id.action_filter:
                 openDialogue();
+                break;
+
+            case R.id.action_gone:
+
+                if(!villageview)
+                {
+                    rl_villageview.setVisibility(View.VISIBLE);
+                    villageview = true;
+                }
+                else
+                {
+                    rl_villageview.setVisibility(View.GONE);
+                    villageview = false;
+                }
+
                 break;
             default:
                 return super.onContextItemSelected(item);

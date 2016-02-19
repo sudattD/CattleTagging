@@ -9,8 +9,11 @@
     >
 
     <ScrollView
+        android:id="@+id/sv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+        >
 
         <LinearLayout
             android:orientation="vertical"
@@ -221,6 +224,35 @@
 
 
             </android.support.design.widget.TextInputLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/spinner"
+                android:layout_marginTop="5px"
+                android:gravity="center_horizontal|bottom"
+                android:visibility="invisible"
+                android:paddingTop="2px" >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px"
+                    android:text="Delete" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/bottom_layout">
+
+        </include>
+
+    </LinearLayout>
 </RelativeLayout>

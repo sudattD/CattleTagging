@@ -2,6 +2,7 @@ package com.hdfcergo.cattletagging.CattleTaggingFragments;
 
 
 import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.hdfcergo.cattletagging.R;
@@ -25,13 +27,15 @@ public class StatusFragment extends Fragment  {
     Context mContext;
     private View view;
     ArrayAdapter<String> adapter;
-    private String[] statusType = {"Status 1","Status 2"};
+    private String[] statusType = {"Status 1","Status 2","Status 3"};
+    ImageView rightArrow;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_status, container, false);
+        rightArrow =(ImageView) view.findViewById(R.id.forward);
 
        // spinner =(Spinner) view.findViewById(R.id.spinner);
         initializeViews();
@@ -53,7 +57,7 @@ public class StatusFragment extends Fragment  {
 
         mContext = view.getContext();
         //spinner.setOnItemSelectedListener(mContext);
-
+        rightArrow.setVisibility(View.VISIBLE);
         MaterialBetterSpinner spinner = (MaterialBetterSpinner)view.findViewById(R.id.spinner_status);
         adapter = new ArrayAdapter<String>(getActivity(),  R.layout.spinner_layout, statusType);
         spinner.setAdapter(adapter);

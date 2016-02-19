@@ -15,9 +15,11 @@
         app:cardBackgroundColor="@color/colorPrimary">
 
         <RelativeLayout
+            android:id="@+id/villageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/village"
@@ -44,6 +46,18 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_below="@+id/taluka"
+                android:id="@+id/assigned"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:textColor="#000000"
+
+                android:text="10 Assigned/ 12 Unassigned"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
                 android:id="@+id/leads_cattles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,34 +71,21 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="35dp"
                 android:layout_below="@+id/leads_cattles"
                 android:layout_alignParentRight="true">
 
-                <Button
-                    android:id="@+id/assigned"
-                    android:layout_width="35dp"
+                <TextView
+                    android:id="@+id/assignedd"
+                    android:layout_width="wrap_content"
                     android:layout_height="28dp"
                     android:textColor="#ffffff"
-                    android:background="@drawable/border"
-                    android:text="10"
+
+
                     android:textStyle="bold"
 
                     />
 
-                <Button
-                    android:id="@+id/unassigned"
-                    android:layout_width="35dp"
-                    android:layout_height="28dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@+id/btn_left"
-                    android:background="@drawable/border_blue"
-                    android:layout_marginLeft="5dp"
-                    android:text="12"
-                    android:textColor="#ffffff"
-                    android:textStyle="bold"
-
-                    />
 
 
             </LinearLayout>

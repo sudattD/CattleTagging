@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.style.StyleSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.hdfcergo.cattletagging.CattleFormFilling.CattleFormFilling;
 import com.hdfcergo.cattletagging.CattleTaggingFragments.SignatureViewActivity;
 import com.hdfcergo.cattletagging.DashBoard.DashBoardAdapter;
 import com.hdfcergo.cattletagging.DashBoard.DashboardDataDummy;
@@ -53,8 +55,8 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cattle_lead_summary);
-        
+       // setContentView(R.layout.activity_cattle_lead_summary);
+        setContentView(R.layout.act_lead_summary_redesign);
         
         initializeView();
 
@@ -71,13 +73,16 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         tv3 = (TextView) findViewById(R.id.tv_appointmenttaken);
 
         recyclerViewData = new ArrayList<LeadCattleData>();
-        recyclerViewData.add(new LeadCattleData("Cattle 1",R.drawable.rightrat));
-        recyclerViewData.add(new LeadCattleData("Cattle 2",R.drawable.rightrat));
-        recyclerViewData.add(new LeadCattleData("Cattle 3",R.drawable.rightrat));
-        recyclerViewData.add(new LeadCattleData("Cattle 4",R.drawable.rightrat));
-        recyclerViewData.add(new LeadCattleData("Cattle 5",R.drawable.rightrat));
-        recyclerViewData.add(new LeadCattleData("Cattle 6", R.drawable.rightrat));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#669900"),"Cattle 1",R.drawable.rightrat));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#669900"),"Cattle 2",R.drawable.rightrat));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#669900"),"Cattle 3",R.drawable.rightrat));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#C43635"),"Cattle 4",0));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#669900"),"Cattle 5",R.drawable.rightrat));
+        recyclerViewData.add(new LeadCattleData(Color.parseColor("#C43635"),"Cattle 6", 0));
 
+
+
+       //recyclerViewData.add(new LeadCattleData(Color.parseColor("#C43635"),"Cattle 1",0));
 
        /* MaterialBetterSpinner spinner = (MaterialBetterSpinner)findViewById(R.id.spinner_status);
         adapter = new ArrayAdapter<String>(mContext,  R.layout.spinner_layout, cattleStatus);
@@ -94,7 +99,7 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         rv.setLayoutManager(llm);
 
 
-        LeadCattleAdapter adapter = new LeadCattleAdapter(recyclerViewData,mContext);
+        LeadCattleAdapter adapter = new LeadCattleAdapter(recyclerViewData,mContext,bundle.getString("lead"));
         rv.setAdapter(adapter);
 
 
@@ -103,7 +108,7 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        getSupportActionBar().setTitle(bundle.getString("person"));
+        getSupportActionBar().setTitle("Lead Summary");
         getSupportActionBar().setSubtitle(bundle.getString("lead"));
 
 
@@ -133,10 +138,15 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         switch (item.getItemId())
         {
             case R.id.action_signature:
-                startActivity(new Intent(CattleLeadSummaryActivity.this, SignatureViewActivity.class));
+                startActivity(new Intent(CattleLeadSummaryActivity.this, SignatureViewActivity.class).putExtra("lead",(bundle.getString("lead"))));
                 break;
 
             case R.id.action_search:
+
+                break;
+            case R.id.action_gotoform:
+
+                startActivity(new Intent(CattleLeadSummaryActivity.this, CattleFormFilling.class).putExtra("lead",(bundle.getString("lead"))));
 
                 break;
         }
@@ -162,11 +172,11 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         tv1.setTextColor(Color.parseColor("#ffffff"));
         tv1.setBackgroundResource(R.drawable.curve_sharp);
 
-        tv2.setTextColor(Color.parseColor("#000000"));
-        tv2.setBackgroundResource(R.drawable.bg_transparent);
+        tv2.setTextColor(Color.parseColor("#838383"));
+        tv2.setBackgroundResource(R.drawable.bg_greyish);
 
-        tv3.setTextColor(Color.parseColor("#000000"));
-        tv3.setBackgroundResource(R.drawable.bg_transparent);
+        tv3.setTextColor(Color.parseColor("#838383"));
+        tv3.setBackgroundResource(R.drawable.bg_greyish);
 
      /*   if(!cattNot)
         {
@@ -197,11 +207,11 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
             tv2.setTextColor(Color.parseColor("#ffffff"));
             tv2.setBackgroundResource(R.drawable.curve_sharp);
 
-        tv1.setTextColor(Color.parseColor("#000000"));
-        tv1.setBackgroundResource(R.drawable.bg_transparent);
+        tv1.setTextColor(Color.parseColor("#838383"));
+        tv1.setBackgroundResource(R.drawable.bg_greyish);
 
-        tv3.setTextColor(Color.parseColor("#000000"));
-        tv3.setBackgroundResource(R.drawable.bg_transparent);
+        tv3.setTextColor(Color.parseColor("#838383"));
+        tv3.setBackgroundResource(R.drawable.bg_greyish);
 
     }
 
@@ -213,11 +223,11 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         tv3.setBackgroundResource(R.drawable.curve_sharp);
 
 
-        tv1.setTextColor(Color.parseColor("#000000"));
-        tv1.setBackgroundResource(R.drawable.bg_transparent);
+        tv1.setTextColor(Color.parseColor("#838383"));
+        tv1.setBackgroundResource(R.drawable.bg_greyish);
 
-        tv2.setTextColor(Color.parseColor("#000000"));
-        tv2.setBackgroundResource(R.drawable.bg_transparent);
+        tv2.setTextColor(Color.parseColor("#838383"));
+        tv2.setBackgroundResource(R.drawable.bg_greyish);
 
 
     }

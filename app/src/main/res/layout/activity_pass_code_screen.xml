@@ -50,7 +50,7 @@
                         android:layout_marginBottom="@dimen/activity_vertical_margin"
                         android:fontFamily="sans-serif"
                         android:hint="@string/passcode"
-                        android:inputType="numberPassword"
+                        android:inputType="text"
                         android:paddingLeft="7dp"
                         android:paddingRight="7dp"
                         android:textColor="@android:color/black"

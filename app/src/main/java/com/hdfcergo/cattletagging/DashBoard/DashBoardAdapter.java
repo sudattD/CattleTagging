@@ -56,7 +56,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
         PersonViewHolder.talukaName.setText(dashboardDataDummies.get(position).taluka);
         PersonViewHolder.leadCattles.setText(dashboardDataDummies.get(position).leadCattles);
         PersonViewHolder.assigned.setText(dashboardDataDummies.get(position).assigned);
-        PersonViewHolder.unAssigned.setText(dashboardDataDummies.get(position).notAssigned);
+       // PersonViewHolder.unAssigned.setText(dashboardDataDummies.get(position).notAssigned);
 
 
 
@@ -75,6 +75,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
 
             }
         });
+
 
 
 
@@ -106,7 +107,7 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
             talukaName = (TextView) itemView.findViewById(R.id.taluka);
             leadCattles = (TextView) itemView.findViewById(R.id.leads_cattles);
             assigned =  (TextView) itemView.findViewById(R.id.assigned);
-            unAssigned = (TextView) itemView.findViewById(R.id.unassigned);
+
         }
     }
 

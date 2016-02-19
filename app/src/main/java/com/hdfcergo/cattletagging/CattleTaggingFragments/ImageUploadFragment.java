@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.hdfcergo.cattletagging.R;
 
@@ -14,12 +15,24 @@ import com.hdfcergo.cattletagging.R;
  */
 public class ImageUploadFragment extends Fragment {
 
+    ImageView back;
+    View view;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_imageupload, container, false);
-        return rootView;
+        view = inflater.inflate(R.layout.fragment_imageupload, container, false);
+
+        initializeControls();
+        return view;
 
 
+    }
+
+    private void initializeControls() {
+
+
+        back = (ImageView) view.findViewById(R.id.backward);
+        back.setVisibility(View.VISIBLE);
     }
 }

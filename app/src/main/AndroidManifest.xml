@@ -56,7 +56,9 @@
             android:name=".CattleTaggingFragments.SignatureViewActivity"
             android:label="Signature"
             android:screenOrientation="portrait" />
-        <activity android:name=".LeadSummarySwipable.LeadSummarySwipable"></activity>
+        <activity android:name=".FormFillingSwipeable.FormFillingSwipeable"
+            android:label="Signature"
+            ></activity>
     </application>
 
 </manifest>

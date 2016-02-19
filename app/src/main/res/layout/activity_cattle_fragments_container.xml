@@ -7,55 +7,7 @@
     tools:context="com.hdfcergo.cattletagging.CattleTaggingFragments.CattleFragmentsContainerActivity">
 
 
-    <LinearLayout
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:weightSum="1"
-        android:background="#cfcfcf"
-        android:gravity="center"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/img_status"
-            android:layout_width="0dp"
-            android:layout_height="45px"
-            android:layout_weight="0.33"
-            android:src="@drawable/status"
-            android:gravity="center"
-            android:onClick="onStatusFrag"/>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="35dp"
-            android:background="#000000"/>
-
-
-        <ImageView
-            android:id="@+id/img_details"
-            android:layout_width="0dp"
-            android:layout_height="45px"
-            android:layout_weight="0.33"
-            android:gravity="center"
-            android:src="@drawable/detail"
-            android:onClick="detailsFrag"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="35dp"
-            android:background="#000000"/>
-
-        <ImageView
-            android:id="@+id/img_imageUpload"
-            android:layout_width="0dp"
-            android:layout_height="45px"
-            android:layout_weight="0.33"
-            android:gravity="center"
-           android:src="@drawable/image"
-            android:onClick="imageUploadFrag"/>
-
-
-
-    </LinearLayout>
 
     <FrameLayout
         android:layout_below="@+id/tabs"

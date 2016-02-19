@@ -32,7 +32,7 @@ import java.util.List;
 public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.PersonViewHolder> {
 
     List<LeadDataDummy> dashboardDataDummies;
-    private Context mContext;
+    private static Context mContext;
     Point p;
     static View viewObject;
     int[] location;
@@ -88,21 +88,24 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
         });
 
 
-        PersonViewHolder.knowStatus.setOnClickListener(new View.OnClickListener() {
+        /*PersonViewHolder.knowStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                // Toast.makeText(context, "Image view", Toast.LENGTH_SHORT).show();
-                if (p != null)
+             *//*   if (p != null)
                 {
 
                     Log.d("location", locateView(PersonViewHolder.knowStatus) + "");
                     showPopup();
                    // showPopup(a);
-            }
+            }*//*
+
+
+
 
             }
-        });
+        });*/
 
 
 
@@ -214,9 +217,10 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
         static ImageView knowStatus;
 
 
-        PersonViewHolder(View itemView) {
+        PersonViewHolder(final View itemView) {
 
             super(itemView);
+            mContext = itemView.getContext();
             viewObject = itemView;
             cv = (CardView) itemView.findViewById(R.id.cv);
             beneficieryName = (TextView) itemView.findViewById(R.id.tv_beneficiery);
@@ -226,7 +230,35 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
             noOfCattles = (TextView) itemView.findViewById(R.id.tv_cattles);
 
             knowStatus = (ImageView) itemView.findViewById(R.id.img_status);
+
+
+            knowStatus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ViewDialogue alert = new ViewDialogue(view.getContext());
+
+                    //view = viewHolder
+                    //v = onclick v
+                    if(LeadDetailActivity.villageview)
+                    {
+                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-290);
+                    }
+                    else
+                    {
+                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-420);
+                    }
+
+                    alert.setCanceledOnTouchOutside(true);
+                }
+            });
         }
+
+
+
+
+
+
+
     }
 
 

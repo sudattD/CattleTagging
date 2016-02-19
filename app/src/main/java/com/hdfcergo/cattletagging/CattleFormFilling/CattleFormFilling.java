@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
 import com.hdfcergo.cattletagging.CattleTaggingFragments.CattleFragmentsContainerActivity;
+import com.hdfcergo.cattletagging.FormFillingSwipeable.FormFillingSwipeable;
 import com.hdfcergo.cattletagging.R;
 
 public class CattleFormFilling extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class CattleFormFilling extends AppCompatActivity {
     CheckBox check_leadDetails,check_contactDetails;
     LinearLayout ll_leadDetails,ll_contactDetails;
     Context mContext;
-
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,14 @@ public class CattleFormFilling extends AppCompatActivity {
     private void initializeViews() {
 
         mContext = this;
+        bundle = getIntent().getExtras();
         check_contactDetails = (CheckBox)findViewById(R.id.check_contact);
         check_leadDetails = (CheckBox)findViewById(R.id.check_LeadDetails);
         ll_contactDetails = (LinearLayout)findViewById(R.id.ll_contact);
         ll_leadDetails = (LinearLayout)findViewById(R.id.ll_leaddetails);
 
+        getSupportActionBar().setTitle("Lead Details");
+        getSupportActionBar().setSubtitle(bundle.getString("lead"));
 
         ll_leadDetails.setVisibility(View.VISIBLE);
        // check_leadDetails.setChecked(false);
@@ -89,10 +93,7 @@ public class CattleFormFilling extends AppCompatActivity {
 
 
         switch(item.getItemId()) {
-            case R.id.action_tagging:
 
-                startActivity(new Intent(mContext, CattleFragmentsContainerActivity.class));
-                break;
 
             default:
 

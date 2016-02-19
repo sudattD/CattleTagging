@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.hdfcergo.cattletagging.CattleFormFilling.CattleFormFilling;
 import com.hdfcergo.cattletagging.DashBoard.DashBoardAdapter;
 import com.hdfcergo.cattletagging.DashBoard.DashboardDataDummy;
+import com.hdfcergo.cattletagging.FormFillingSwipeable.FormFillingSwipeable;
 import com.hdfcergo.cattletagging.LeadDetails.LeadDetailActivity;
 import com.hdfcergo.cattletagging.LeadDetails.LeadDetailsAdapter;
 import com.hdfcergo.cattletagging.R;
@@ -28,13 +29,14 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
 
     List<LeadCattleData> dashboardDataDummies;
     private Context context;
+    String leadVal;
 
 
-
-    LeadCattleAdapter(List<LeadCattleData> dashboardDataDummies,Context mcont)
+    LeadCattleAdapter(List<LeadCattleData> dashboardDataDummies,Context mcont,String lead)
     {
         this.dashboardDataDummies = dashboardDataDummies;
         context = mcont;
+        this.leadVal = lead;
     }
 
 
@@ -53,9 +55,9 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
 
 
         final LeadCattleData leadCattleData = dashboardDataDummies.get(position);
-        PersonViewHolder.cattleName.setText(dashboardDataDummies.get(position).cattle);
-        PersonViewHolder.statusImage.setImageResource(dashboardDataDummies.get(position).imageIcon);
-
+        PersonViewHolder.cattleName.setText(dashboardDataDummies.get(position).getCattle());
+        PersonViewHolder.statusImage.setImageResource(dashboardDataDummies.get(position).getImageIcon());
+        PersonViewHolder.leftsideView.setBackgroundColor(dashboardDataDummies.get(position).getLeftImageColor());
         List<String> cattleInfo = new ArrayList<>();
 
 
@@ -64,7 +66,7 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
             public void onClick(View view) {
 
                // Toast.makeText(context, "Card view"+dashboardDataDummies.get(position).cattle, Toast.LENGTH_SHORT).show();
-                context.startActivity(new Intent(context,CattleFormFilling.class).putExtra("cattle", leadCattleData.cattle));
+                context.startActivity(new Intent(context, FormFillingSwipeable.class).putExtra("cattle", leadCattleData.cattle).putExtra("lead",leadVal));
 
 
             }
@@ -88,6 +90,7 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
         static CardView cv;
         static TextView cattleName;
         static ImageView statusImage;
+        static View leftsideView;
 
 
         PersonViewHolder(View itemView) {
@@ -96,6 +99,7 @@ public class LeadCattleAdapter extends RecyclerView.Adapter<LeadCattleAdapter.Pe
             cv = (CardView) itemView.findViewById(R.id.cv);
             cattleName = (TextView) itemView.findViewById(R.id.tv_cattleName);
             statusImage = (ImageView)itemView.findViewById(R.id.img_status);
+            leftsideView = (View)itemView.findViewById(R.id.leftsideview);
 
         }
     }

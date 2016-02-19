@@ -11,7 +11,8 @@
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
 
 
@@ -24,6 +25,7 @@
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:weightSum="1"
+
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp">
@@ -37,9 +39,10 @@
             android:layout_weight="0.33"
             android:gravity="center|center_vertical"
             android:text="Cattle not available"
-            android:textColor="#ffffff"
-            android:background="@drawable/curve_sharp"
-            android:onClick="CattleNotAvailable"/>
+            android:layout_margin="1dp"
+            android:background="@drawable/bg_greyish"
+            android:onClick="CattleNotAvailable"
+            android:textSize="16sp"/>
 
 
             <TextView
@@ -49,6 +52,9 @@
                 android:layout_weight="0.33"
                 android:gravity="center|center_vertical"
                 android:text="Farmer not available"
+                android:textSize="16sp"
+                android:layout_margin="1dp"
+                android:background="@drawable/bg_greyish"
                 android:onClick="FarmernotAvailable"/>
 
             <TextView
@@ -58,6 +64,9 @@
                 android:layout_weight="0.33"
                 android:gravity="center|center_vertical"
                 android:text="Apointment taken"
+                android:textSize="16sp"
+                android:layout_margin="1dp"
+                android:background="@drawable/bg_greyish"
                 android:onClick="AppointmentTaken"/>
 
         </LinearLayout>
@@ -193,7 +202,7 @@
 
 
 
-            android:background="@color/hdfc_red"
+            android:background="@color/colorPrimary"
             android:layout_gravity="center_vertical"
             >
 

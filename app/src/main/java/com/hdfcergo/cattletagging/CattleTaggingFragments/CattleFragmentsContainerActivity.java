@@ -51,8 +51,8 @@ public class CattleFragmentsContainerActivity extends AppCompatActivity  {
         frameLayout = (FrameLayout) findViewById(R.id.frameContainer);
 
         status = (ImageView) findViewById(R.id.img_status);
-        details = (ImageView) findViewById(R.id.img_details);
-        imageUpload = (ImageView) findViewById(R.id.img_imageUpload);
+       // details = (ImageView) findViewById(R.id.img_details);
+        //imageUpload = (ImageView) findViewById(R.id.img_imageUpload);
 
 
     }
