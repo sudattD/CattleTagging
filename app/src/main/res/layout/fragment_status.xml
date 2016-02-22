@@ -22,20 +22,49 @@
             android:paddingTop="@dimen/activity_vertical_margin">
 
 
-
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/spinner_status"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/colorPrimary"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.12"
+                android:weightSum="1"
 
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="3dp">
 
-                android:gravity="left|center_vertical"
-                android:hint="Status"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/edittext_size"
-                app:met_floatingLabel="normal" />
 
+                <TextView
+                    android:id="@+id/tv_approve"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center|center_vertical"
+                    android:text="Approve"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish"
+                    android:textSize="16sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_pending"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center|center_vertical"
+                    android:text="Pending"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+
+
+            </LinearLayout>
 
 
             <android.support.design.widget.TextInputLayout
@@ -70,12 +99,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:hint="Tag Date."
-
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
+                    android:focusableInTouchMode="false"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/edittext_size" />
-
+                    android:textSize="@dimen/edittext_size"
+                    />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -90,7 +119,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:hint="Market Value"
-
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@android:color/black"

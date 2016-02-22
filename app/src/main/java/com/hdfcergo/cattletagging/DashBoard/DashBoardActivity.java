@@ -75,8 +75,8 @@ public class DashBoardActivity extends AppCompatActivity {
 
 
         //Setting up texts
-        getSupportActionBar().setTitle("Dashboard " + "(4)" + "(11)" + "(81)");
-
+       // getSupportActionBar().setTitle("Dashboard " + "(4)" + "(11)" + "(81)");
+        getSupportActionBar().setTitle("Dashboard");
 
         //mAdapter = new DashBoardAdapter(myDataset);
 

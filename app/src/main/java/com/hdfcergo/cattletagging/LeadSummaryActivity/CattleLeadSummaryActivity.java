@@ -116,7 +116,7 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
         //Textview color changes initially for 3 options of cattle status
        // tv1.setTextColor(Color.parseColor("#ffffff"));
        // tv1.setBackgroundResource(R.drawable.curve_sharp);
-        cattNot = true;
+       // cattNot = true;
 
     }
 
@@ -168,15 +168,31 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
     public void CattleNotAvailable(View v)
     {
 
-       /// cattNot = true;
-        tv1.setTextColor(Color.parseColor("#ffffff"));
-        tv1.setBackgroundResource(R.drawable.curve_sharp);
 
-        tv2.setTextColor(Color.parseColor("#838383"));
-        tv2.setBackgroundResource(R.drawable.bg_greyish);
 
-        tv3.setTextColor(Color.parseColor("#838383"));
-        tv3.setBackgroundResource(R.drawable.bg_greyish);
+        if(!cattNot)
+        {
+
+            tv1.setTextColor(Color.parseColor("#ffffff"));   //selected
+            tv1.setBackgroundResource(R.drawable.curve_sharp);//selected
+
+            tv2.setTextColor(Color.parseColor("#838383"));
+            tv2.setBackgroundResource(R.drawable.bg_greyish);
+
+            tv3.setTextColor(Color.parseColor("#838383"));
+            tv3.setBackgroundResource(R.drawable.bg_greyish);
+
+            cattNot = true;
+            farmerNot = false;
+            appointnot = false;
+        }
+        else
+        {
+            tv1.setTextColor(Color.parseColor("#838383"));  //unselected
+            tv1.setBackgroundResource(R.drawable.bg_greyish); //unselected
+            cattNot = false;
+
+        }
 
      /*   if(!cattNot)
         {
@@ -202,16 +218,30 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
     public void FarmernotAvailable(View v)
     {
 
+            if(!farmerNot)
+            {
+                tv2.setTextColor(Color.parseColor("#ffffff"));
+                tv2.setBackgroundResource(R.drawable.curve_sharp);
+
+                tv1.setTextColor(Color.parseColor("#838383"));
+                tv1.setBackgroundResource(R.drawable.bg_greyish);
+
+                tv3.setTextColor(Color.parseColor("#838383"));
+                tv3.setBackgroundResource(R.drawable.bg_greyish);
+
+                farmerNot = true;
+                cattNot = false;
+                appointnot = false;
+            }
+        else
+            {
+                tv2.setTextColor(Color.parseColor("#838383"));
+                tv2.setBackgroundResource(R.drawable.bg_greyish);
+                farmerNot = false;
+
+            }
 
 
-            tv2.setTextColor(Color.parseColor("#ffffff"));
-            tv2.setBackgroundResource(R.drawable.curve_sharp);
-
-        tv1.setTextColor(Color.parseColor("#838383"));
-        tv1.setBackgroundResource(R.drawable.bg_greyish);
-
-        tv3.setTextColor(Color.parseColor("#838383"));
-        tv3.setBackgroundResource(R.drawable.bg_greyish);
 
     }
 
@@ -219,15 +249,29 @@ public class CattleLeadSummaryActivity extends AppCompatActivity implements Adap
     {
 
 
-        tv3.setTextColor(Color.parseColor("#ffffff"));
-        tv3.setBackgroundResource(R.drawable.curve_sharp);
+        if(!appointnot)
+        {
+            tv3.setTextColor(Color.parseColor("#ffffff"));
+            tv3.setBackgroundResource(R.drawable.curve_sharp);
 
 
-        tv1.setTextColor(Color.parseColor("#838383"));
-        tv1.setBackgroundResource(R.drawable.bg_greyish);
+            tv1.setTextColor(Color.parseColor("#838383"));
+            tv1.setBackgroundResource(R.drawable.bg_greyish);
 
-        tv2.setTextColor(Color.parseColor("#838383"));
-        tv2.setBackgroundResource(R.drawable.bg_greyish);
+            tv2.setTextColor(Color.parseColor("#838383"));
+            tv2.setBackgroundResource(R.drawable.bg_greyish);
+
+            appointnot = true;
+            cattNot = false;
+            farmerNot = false;
+        }
+
+        else
+        {
+            tv3.setTextColor(Color.parseColor("#838383"));
+            tv3.setBackgroundResource(R.drawable.bg_greyish);
+            appointnot = false;
+        }
 
 
     }

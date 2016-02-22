@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
@@ -47,6 +48,17 @@ public class LeadDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lead_detail_screens);
 
         initializeViews();
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+
+        rl_villageview.getHeight();
+        Log.d("HEIGHT",+rl_villageview.getLayoutParams().height+"");
+
+
     }
 
     private void initializeViews() {

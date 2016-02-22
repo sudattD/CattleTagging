@@ -52,10 +52,10 @@ public class DashBoardAdapter extends RecyclerView.Adapter<DashBoardAdapter.Pers
 
        final DashboardDataDummy data_on_position = dashboardDataDummies.get(position);
 
-        PersonViewHolder.villageName.setText(dashboardDataDummies.get(position).village);
-        PersonViewHolder.talukaName.setText(dashboardDataDummies.get(position).taluka);
-        PersonViewHolder.leadCattles.setText(dashboardDataDummies.get(position).leadCattles);
-        PersonViewHolder.assigned.setText(dashboardDataDummies.get(position).assigned);
+        PersonViewHolder.villageName.setText(dashboardDataDummies.get(position).getVillage());
+        PersonViewHolder.talukaName.setText(dashboardDataDummies.get(position).getTaluka());
+        PersonViewHolder.leadCattles.setText(dashboardDataDummies.get(position).getLeadCattles());
+        PersonViewHolder.assigned.setText(dashboardDataDummies.get(position).getAssigned());
        // PersonViewHolder.unAssigned.setText(dashboardDataDummies.get(position).notAssigned);
 
 

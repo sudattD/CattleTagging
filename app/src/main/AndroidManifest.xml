@@ -42,7 +42,6 @@
             android:name=".LeadSummaryActivity.CattleLeadSummaryActivity"
             android:label="Lead Summary"
             android:screenOrientation="portrait"
-
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".CattleFormFilling.CattleFormFilling"
@@ -56,9 +55,11 @@
             android:name=".CattleTaggingFragments.SignatureViewActivity"
             android:label="Signature"
             android:screenOrientation="portrait" />
-        <activity android:name=".FormFillingSwipeable.FormFillingSwipeable"
+        <activity
+            android:name=".FormFillingSwipeable.FormFillingSwipeable"
             android:label="Signature"
-            ></activity>
+            android:windowSoftInputMode="stateHidden"/>
+
     </application>
 
 </manifest>

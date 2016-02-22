@@ -4,16 +4,12 @@
     android:id="@+id/rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-
-    >
+    android:background="@android:color/white">
 
     <ScrollView
         android:id="@+id/sv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"
@@ -24,49 +20,150 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin">
 
-
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/spinner_species"
-                android:layout_width="match_parent"
+            <!--For species-->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginLeft="4dp"
-
-                android:gravity="left|center_vertical"
-                android:hint="Species"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/edittext_size"
-                app:met_floatingLabel="normal" />
-
-
-
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/spinner_animalbreeed"
+                android:text="Species"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/colorPrimary"/>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.12"
+                android:weightSum="1"
 
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="5dp">
 
-                android:gravity="left|center_vertical"
-                android:hint="Animal Breed"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/edittext_size"
-                app:met_floatingLabel="normal" />
+                <TextView
+                    android:id="@+id/tv_cow"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Cow"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
 
 
+                <TextView
+                    android:id="@+id/tv_buffalo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Buffalo"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
 
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/spinner_breedtype"
+
+                <TextView
+                    android:id="@+id/tv_others"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Others"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+            </LinearLayout>
+
+            <!--For animal breed-->
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_breed1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center|center_vertical"
+                    android:text="Cow"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+
+
+                <TextView
+                    android:id="@+id/tv_breed2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center|center_vertical"
+                    android:text="Buffalo"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+
+            </LinearLayout>
+
+            <!--For breed type-->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Breed"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/colorPrimary"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_weight="0.12"
+                android:weightSum="1"
 
-                android:layout_marginLeft="4dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="5dp">
 
-                android:gravity="left|center_vertical"
-                android:hint="Breed Type"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/edittext_size"
-                app:met_floatingLabel="normal" />
+
+
+                <TextView
+                    android:id="@+id/tv_cross"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Cross"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+
+                <TextView
+                    android:id="@+id/tv_exotic"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Exotic"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+
+                <TextView
+                    android:id="@+id/tv_indigenous"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center|center_vertical"
+                    android:text="Indigenous"
+                    android:textSize="16sp"
+                    android:layout_margin="1dp"
+                    android:background="@drawable/bg_greyish" />
+            </LinearLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/marketval"
@@ -79,7 +176,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:hint="Body Color"
-
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@android:color/black"
@@ -105,7 +201,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
                         android:hint="Left Horn"
-
                         android:paddingLeft="7dp"
                         android:paddingRight="7dp"
                         android:textColor="@android:color/black"
@@ -125,7 +220,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
                         android:hint="Right Horn"
-
                         android:paddingLeft="7dp"
                         android:paddingRight="7dp"
                         android:textColor="@android:color/black"
@@ -148,7 +242,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:hint="Switch of Tail"
-
                     android:paddingLeft="7dp"
                     android:paddingRight="7dp"
                     android:textColor="@android:color/black"
@@ -163,9 +256,7 @@
                 android:id="@+id/spinner_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginLeft="4dp"
-
                 android:gravity="left|center_vertical"
                 android:hint="Approximate Age"
                 android:textColor="@android:color/black"
@@ -182,9 +273,7 @@
                     android:id="@+id/spinner_milk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_marginLeft="4dp"
-
                     android:gravity="left|center_vertical"
                     android:hint="Milk yield/day"
                     android:textColor="@android:color/black"

@@ -66,11 +66,11 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
 
 
         final LeadDataDummy leadDataDummy =  dashboardDataDummies.get(position);
-        PersonViewHolder.beneficieryName.setText(dashboardDataDummies.get(position).beneficieryName);
-        PersonViewHolder.loanAccountNo.setText(dashboardDataDummies.get(position).loanNo);
-        PersonViewHolder.leadNo.setText(dashboardDataDummies.get(position).leadNo);
-        PersonViewHolder.leadDate.setText(dashboardDataDummies.get(position).leadGeneratedDate);
-        PersonViewHolder.noOfCattles.setText(dashboardDataDummies.get(position).noOfCattles);
+        PersonViewHolder.beneficieryName.setText(dashboardDataDummies.get(position).getBeneficieryName());
+        PersonViewHolder.loanAccountNo.setText(dashboardDataDummies.get(position).getLoanNo());
+        PersonViewHolder.leadNo.setText(dashboardDataDummies.get(position).getLeadNo());
+        PersonViewHolder.leadDate.setText(dashboardDataDummies.get(position).getLeadGeneratedDate());
+        PersonViewHolder.noOfCattles.setText(dashboardDataDummies.get(position).getNoOfCattles());
 
 
 
@@ -184,8 +184,8 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
         popup.setBackgroundDrawable(new BitmapDrawable());
 
         // Displaying the popup at the specified location, + offsets.
-        popup.showAtLocation(layout, Gravity.TOP|Gravity.LEFT, locateView(PersonViewHolder.knowStatus).left, locateView(PersonViewHolder.knowStatus).bottom);
-
+      //  popup.showAtLocation(layout, Gravity.TOP|Gravity.LEFT, locateView(PersonViewHolder.knowStatus).left, locateView(PersonViewHolder.knowStatus).bottom);
+        popup.showAtLocation(layout, Gravity.RIGHT|Gravity.RIGHT, locateView(PersonViewHolder.knowStatus).left, locateView(PersonViewHolder.knowStatus).bottom);
         // Getting a reference to Close button, and close the popup when clicked.
         Button close = (Button) layout.findViewById(R.id.close);
         close.setOnClickListener(new View.OnClickListener() {
@@ -241,11 +241,14 @@ public class LeadDetailsAdapter extends RecyclerView.Adapter<LeadDetailsAdapter.
                     //v = onclick v
                     if(LeadDetailActivity.villageview)
                     {
-                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-290);
+                        //alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-290);
+                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getRight()), (itemView.getTop()-50));
                     }
                     else
                     {
-                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-420);
+                       // alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getLeft()-(view.getWidth()))+170, (itemView.getTop()+(view.getHeight()*1))-420);
+
+                        alert.showDialog(mContext, "Cattle not available      ","Cattle Wasnt found at 3pm",(itemView.getRight()), (itemView.getTop()-300));
                     }
 
                     alert.setCanceledOnTouchOutside(true);
